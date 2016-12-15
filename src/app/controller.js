@@ -18,7 +18,7 @@
                 if(ctrl.username =='test' && ctrl.password == 'test')
                 {
                     window.alert('welcome');
-                    window.location ='data.html';
+                    window.location ='getData.html';
                 }
                 else
                 {

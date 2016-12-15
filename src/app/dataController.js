@@ -14,7 +14,14 @@
         var dataCtrl = this;
         dataCtrl.getData = getData;
         dataCtrl.upload = upload;
-        //dataCtrl.check =check;
+        dataCtrl.test =test;
+
+        //function to check weather the data is coming from the front end or not.
+        function test()
+        {  
+            console.log(dataCtrl.obj);
+        }
+
 
         function upload() {
                  myService.postData(dataCtrl.obj)

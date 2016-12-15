@@ -32,7 +32,7 @@
 
 
         function postData(data) {
-            //console.log('data from service'+data.content);
+            console.log('data received from controller'+data);
             var dataObj = {
                 target : data.target,
                 title : data.title,
