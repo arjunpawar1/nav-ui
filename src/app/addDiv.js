@@ -39,12 +39,10 @@ $(document).ready(function () {
             '<input type="text" placeholder="Placement" ng-model="dataCtrl.obj.placement1" class="form-control"/>' +
             '</div>'+
             '</div>';
-        html = $.parseHTML(str);
-          $('#add').append(str);
+         html = $.parseHTML(str);
+          $('#add').append(html);
+
     })
 });
 
 
-/*
-$('body').append($compile("<my-angular-directive />")(scope));
-scope.$apply(); */
