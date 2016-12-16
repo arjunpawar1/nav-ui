@@ -1,19 +1,21 @@
+<div id="{{dataCtrl.id}}">
 <br><br>
 <div class="form-group">
     <div class="col-xs-4">
         <label for="target">Target:</label>
     </div>
-    <div class="col-xs-8">
-        <input id="target" placeholder="Target" ng-model="dataCtrl.obj.target1" type="text" class="form-control"/>
+    <div class="col-xs-7">
+        <input id="target" placeholder="Target" ng-model="dataCtrl.target" type="text" class="form-control"/>
     </div>
+   <i class="fa fa-trash-o fa-lg custom col-xs-1" aria-hidden="true" ng-click="dataCtrl.trash()"></i>
 </div>
 <br>
 <div class="form-group">
     <div class="col-xs-4">
         <label for="title">Title:</label>
     </div>
-    <div class="col-xs-8">
-        <input id="title" placeholder="Title" ng-model="dataCtrl.obj.title1" type="text" class="form-control"/>
+    <div class="col-xs-7">
+        <input id="title" placeholder="Title" ng-model="dataCtrl.step1.title1" type="text" class="form-control"/>
     </div>
 </div>
 <br>
@@ -21,8 +23,8 @@
     <div class="col-xs-4">
         <label for="content">Content:</label>
     </div>
-    <div class="col-xs-8">
-        <input id="content" placeholder="Content" ng-model="dataCtrl.obj.content1" type="text" class="form-control"/>
+    <div class="col-xs-7">
+        <input id="content" placeholder="Content" ng-model="dataCtrl.step1.content1" type="text" class="form-control"/>
     </div>
 </div>
 <br>
@@ -30,7 +32,9 @@
     <div class="col-xs-4">
         <label for="placement">Placement:</label>
     </div>
-    <div class="col-xs-8">
-        <input id="placement" placeholder="Placement" ng-model="dataCtrl.obj.placement1" type="text" class="form-control"/>
+    <div class="col-xs-7">
+        <input id="placement" placeholder="Placement" ng-model="dataCtrl.step1.placement1" type="text" class="form-control"/>
     </div>
+</div>
+<br>
 </div>

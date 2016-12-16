@@ -32,18 +32,19 @@
 
 
         function postData(data) {
-            console.log('data received from controller'+data);
-            var dataObj = {
+          //  console.log('data received from controller'+data);
+           /* var dataObj = {
+                
+                "id": data.flowName,
                 target : data.target,
                 title : data.title,
                 content:data.content,
                 placement: data.placement
-
-            };
-
-            return $http.put(CONFIG.API_HOST+data.flowName+'.json',dataObj)
+            
+            };*/
+            return $http.put(CONFIG.API_HOST+data.flowName+'.json',data)
                 .then(function (data) {
-                    return data.data;
+                    return data.statusText;
                 },function (data) {
                     return $q.reject('ERROR'+data.statusText);
                     //alert("failure message: " + JSON.stringify({data: data}));
