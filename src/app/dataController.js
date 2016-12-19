@@ -2,7 +2,7 @@
 
     'use strict';
 
-    var number  = 0;
+    var number  = 1;
     angular.module('myApp')
         .controller('dataController', dataController);
 
@@ -24,8 +24,6 @@
             console.log(fin);
             upload(fin);
         }
-
-
         //function to append elements into DOM
         function addDiv() {
             var element = angular.element(document.createElement('my-Directive'));
@@ -34,9 +32,10 @@
             //where to place the element
             angular.element($('#add')).append(element);
             $scope.insertHere = el;
+
+            //giving unique id to div element.
             var objName = 'step'+number;
-            var id = 'id'+number;
-            dataCtrl.id =id;
+            $(element).attr("id",objName);
             console.log(objName);
             number++;
         };
@@ -65,13 +64,13 @@
                 })
         }
 
-
         //click on trash icon : to remove step
                 function trash() {
                 console.log('step deleted');
-                    console.log('element '+$(('#id'+number--)))
-                var elementToRemove = angular.element($(('#id'+number--)));
+                console.log('element '+$(('#id'+number--)))
+                var elementToRemove = angular.element($(('#step'+number--)));
                 elementToRemove.remove();
+                 number++;
         };
 
   }
