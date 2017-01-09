@@ -7,7 +7,6 @@
     <link rel="icon" href="../../favicon.ico"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/custom.css">
-
 </head>
 <body class="jumbotron" ng-controller="dataController as dataCtrl">
 <div class="col-xs-offset-2 col-xs-8">
@@ -61,8 +60,7 @@
             <!--<my-Directive></my-Directive>-->
         </div>
 
-
-        <br><br><br>
+   <br><br><br>
         <div class="form-actions col-xs-offset-6">
             <div class="col-xs-4">
                 <button type="submit" ng-disabled=""   ng-click="dataCtrl.upload()"  class="btn btn-danger">Upload</button>
@@ -75,11 +73,22 @@
             <div class="form-actions col-xs-4">
                 <button id="addDiv" type="submit" ng-click="dataCtrl.addDiv()" class="btn btn-default">Add Step</button>
             </div>
+
         </div>
 
+<br><br>
+        <ul id="tabs">
+            <li><a href="" ng-model="dataCtrl.trick" id="trick" >How to create a status report</a></li>
+            <li><a href="" id="lmllk">Create a Project</a></li>
+          <!--  <li><a href="" id="trick">Timesheet</a></li>-->
+        </ul>
     </form>
-
 </div>
+
+
+
+
+
 <br>
 
 <!-- jQuery Library -->

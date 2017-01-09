@@ -4,6 +4,7 @@
 
     angular.module('myApp')
         .constant('CONFIG',{
-            'API_HOST': 'http://hopstest.s3.amazonaws.com/'
+            'API_HOST': 'https://s3.amazonaws.com/hopstest/'
         });
 })();
+

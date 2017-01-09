@@ -1,8 +1,9 @@
 (function() {
 
     'use strict';
-
+    
     var number  = 1;
+    var finalJson;
     angular.module('myApp')
         .controller('dataController', dataController);
 
@@ -19,11 +20,12 @@
         //function to check weather the data is coming from the front end or not.
 
        // dataCtrl.number = 'step1';
-        function test() {
-            var fin = angular.merge(dataCtrl.obj,dataCtrl.step1);
-            console.log(fin);
-            upload(fin);
+        function test(a) {
+          //  var fin = angular.merge(dataCtrl.obj,dataCtrl.step1);
+            console.log('test'+a);
+          //  upload(fin);
         }
+
         //function to append elements into DOM
         function addDiv() {
             var element = angular.element(document.createElement('my-Directive'));
@@ -35,13 +37,18 @@
 
             //giving unique id to div element.
             var objName = 'step'+number;
+            dataCtrl.tbt = {
+                "val": objName,
+                "tes":"arjun"
+            }
             $(element).attr("id",objName);
             console.log(objName);
             number++;
         };
 
         function upload() {
-           var finalJson = angular.merge(dataCtrl.obj,dataCtrl.step1);
+
+             var finalJson = angular.merge(dataCtrl.obj,dataCtrl.step1);
             console.log(finalJson);
             myService.postData(finalJson)
                 .then(function(data) {
@@ -54,8 +61,9 @@
                 })
         }
 
-        function getData() {
-            myService.getData()
+        //request for data from myService Service.
+        function getData(flowName) {
+            myService.getData(flowName)
                 .then(function(data) {
                     console.log('got Data from service' + data);
                 }, function(error) {
@@ -64,13 +72,22 @@
                 })
         }
 
+
+        //gets the id based on the user click
+        $('#tabs').on("click", "li", function (event) {
+            var activeTab = $(this).find('a').attr('id');
+            //alert(activeTab);
+           // console.log('flow called  '+activeTab);
+            setTimeout(getData(activeTab),2000);
+        });
+
         //click on trash icon : to remove step
                 function trash() {
                 console.log('step deleted');
                 console.log('element '+$(('#id'+number--)))
                 var elementToRemove = angular.element($(('#step'+number--)));
                 elementToRemove.remove();
-                 number++;
+                number++;
         };
 
   }
